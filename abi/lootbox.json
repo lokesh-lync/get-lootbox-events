@@ -1,0 +1,509 @@
+[
+  {
+    "type": "function",
+    "name": "claimRewards",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "claimRewardsPartially",
+    "inputs": [
+      {
+        "name": "_maxRewardsToClaim",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "openLootBox",
+    "inputs": [
+      {
+        "name": "merkleProof",
+        "type": "bytes32[]",
+        "internalType": "bytes32[]"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "openLootBoxWithIdx",
+    "inputs": [
+      {
+        "name": "merkleProof",
+        "type": "bytes32[]",
+        "internalType": "bytes32[]"
+      },
+      { "name": "_idx", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "ItemRemoved",
+    "inputs": [
+      {
+        "name": "addr",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "Item_ERC1155_Updated",
+    "inputs": [
+      {
+        "name": "contractAddress",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "tokenReceiver",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "tokenIdsSent",
+        "type": "uint256[]",
+        "indexed": false,
+        "internalType": "uint256[]"
+      },
+      {
+        "name": "tokenAmountsSent",
+        "type": "uint256[]",
+        "indexed": false,
+        "internalType": "uint256[]"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "Item_ERC20_Updated",
+    "inputs": [
+      {
+        "name": "contractAddress",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "tokenReceiver",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "tokenAmountSent",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "Item_ERC721_Updated",
+    "inputs": [
+      {
+        "name": "contractAddress",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "tokenReceiver",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "tokenIdsSent",
+        "type": "uint256[]",
+        "indexed": false,
+        "internalType": "uint256[]"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "ItemsAdded",
+    "inputs": [
+      {
+        "name": "erc20Items",
+        "type": "tuple[]",
+        "indexed": false,
+        "internalType": "struct ILootBox.Item_ERC20[]",
+        "components": [
+          {
+            "name": "contractAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "distributions",
+            "type": "tuple[]",
+            "internalType": "struct ILootBox.Item_ERC20_Distribution[]",
+            "components": [
+              {
+                "name": "amount",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              { "name": "chance", "type": "uint256", "internalType": "uint256" }
+            ]
+          },
+          {
+            "name": "pickRange",
+            "type": "tuple",
+            "internalType": "struct ILootBox.Range",
+            "components": [
+              { "name": "start", "type": "uint256", "internalType": "uint256" },
+              { "name": "end", "type": "uint256", "internalType": "uint256" }
+            ]
+          },
+          {
+            "name": "tokenAmount",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "name", "type": "string", "internalType": "string" },
+          { "name": "symbol", "type": "string", "internalType": "string" }
+        ]
+      },
+      {
+        "name": "erc721Items",
+        "type": "tuple[]",
+        "indexed": false,
+        "internalType": "struct ILootBox.Item_ERC721[]",
+        "components": [
+          {
+            "name": "contractAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "pickRange",
+            "type": "tuple",
+            "internalType": "struct ILootBox.Range",
+            "components": [
+              { "name": "start", "type": "uint256", "internalType": "uint256" },
+              { "name": "end", "type": "uint256", "internalType": "uint256" }
+            ]
+          },
+          {
+            "name": "inputTokenIdRange",
+            "type": "tuple",
+            "internalType": "struct ILootBox.Range",
+            "components": [
+              { "name": "start", "type": "uint256", "internalType": "uint256" },
+              { "name": "end", "type": "uint256", "internalType": "uint256" }
+            ]
+          },
+          {
+            "name": "inputTokenIds",
+            "type": "uint256[]",
+            "internalType": "uint256[]"
+          },
+          { "name": "uriBase", "type": "string", "internalType": "string" },
+          { "name": "name", "type": "string", "internalType": "string" },
+          { "name": "symbol", "type": "string", "internalType": "string" }
+        ]
+      },
+      {
+        "name": "erc1155Items",
+        "type": "tuple[]",
+        "indexed": false,
+        "internalType": "struct ILootBox.Item_ERC1155[]",
+        "components": [
+          {
+            "name": "contractAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "pickRange",
+            "type": "tuple",
+            "internalType": "struct ILootBox.Range",
+            "components": [
+              { "name": "start", "type": "uint256", "internalType": "uint256" },
+              { "name": "end", "type": "uint256", "internalType": "uint256" }
+            ]
+          },
+          {
+            "name": "inputTokenIdRange",
+            "type": "tuple",
+            "internalType": "struct ILootBox.Range",
+            "components": [
+              { "name": "start", "type": "uint256", "internalType": "uint256" },
+              { "name": "end", "type": "uint256", "internalType": "uint256" }
+            ]
+          },
+          {
+            "name": "inputTokenAmountFixed",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "amountPickRangeFixed",
+            "type": "tuple",
+            "internalType": "struct ILootBox.Range",
+            "components": [
+              { "name": "start", "type": "uint256", "internalType": "uint256" },
+              { "name": "end", "type": "uint256", "internalType": "uint256" }
+            ]
+          },
+          {
+            "name": "inputTokenIds",
+            "type": "uint256[]",
+            "internalType": "uint256[]"
+          },
+          {
+            "name": "inputTokenAmounts",
+            "type": "uint256[]",
+            "internalType": "uint256[]"
+          },
+          {
+            "name": "amountPickRanges",
+            "type": "tuple[]",
+            "internalType": "struct ILootBox.Range[]",
+            "components": [
+              { "name": "start", "type": "uint256", "internalType": "uint256" },
+              { "name": "end", "type": "uint256", "internalType": "uint256" }
+            ]
+          },
+          { "name": "uriBase", "type": "string", "internalType": "string" },
+          { "name": "name", "type": "string", "internalType": "string" },
+          { "name": "symbol", "type": "string", "internalType": "string" }
+        ]
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "LootBoxActivated",
+    "inputs": [],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "LootBoxClaimed",
+    "inputs": [
+      {
+        "name": "claimer",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "pickedTokens",
+        "type": "tuple[]",
+        "indexed": false,
+        "internalType": "struct ILootBox.PickedToken[]",
+        "components": [
+          {
+            "name": "itemContractAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "tokenType",
+            "type": "uint8",
+            "internalType": "enum ILootBox.ItemType"
+          },
+          { "name": "tokenId", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "tokenAmount",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "LootBoxDeactivated",
+    "inputs": [],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "LootBoxOpened",
+    "inputs": [
+      {
+        "name": "requester",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "requestId",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "rngCount",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "uint8"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "LootBoxPermanentlyStoped",
+    "inputs": [],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "LootboxCreated",
+    "inputs": [
+      {
+        "name": "lootbox",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "creator",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "active",
+        "type": "bool",
+        "indexed": true,
+        "internalType": "bool"
+      },
+      {
+        "name": "trustedForwarder",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "name": "merkleRoots",
+        "type": "bytes32[]",
+        "indexed": false,
+        "internalType": "bytes32[]"
+      },
+      {
+        "name": "opens",
+        "type": "uint256[]",
+        "indexed": false,
+        "internalType": "uint256[]"
+      },
+      {
+        "name": "globalOpens",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "OpensReconfigured",
+    "inputs": [
+      {
+        "name": "merkleRoots",
+        "type": "bytes32[]",
+        "indexed": false,
+        "internalType": "bytes32[]"
+      },
+      {
+        "name": "opens",
+        "type": "uint256[]",
+        "indexed": false,
+        "internalType": "uint256[]"
+      },
+      {
+        "name": "globalOpens",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "RngReceived",
+    "inputs": [
+      {
+        "name": "requestId",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "requester",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "rngList",
+        "type": "uint256[]",
+        "indexed": false,
+        "internalType": "uint256[]"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "TrustedForwarderChanged",
+    "inputs": [
+      {
+        "name": "oldTrustedForwarder",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "newTrustedForwarder",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  { "type": "error", "name": "InsufficientAllowance", "inputs": [] },
+  { "type": "error", "name": "InvalidERC1155", "inputs": [] },
+  { "type": "error", "name": "InvalidERC721", "inputs": [] },
+  {
+    "type": "error",
+    "name": "InvalidLootBox",
+    "inputs": [
+      { "name": "lootBox", "type": "address", "internalType": "address" }
+    ]
+  },
+  { "type": "error", "name": "InvalidLootbox", "inputs": [] },
+  { "type": "error", "name": "NotAuthorised", "inputs": [] },
+  { "type": "error", "name": "ReentrancyGuardReentrantCall", "inputs": [] }
+]

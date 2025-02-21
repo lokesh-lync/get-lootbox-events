@@ -1,0 +1,35 @@
+Data till: Block 42760762 - ronin mainnet
+
+Total Lootbox Created: 28
+All Lootbox Addresses: 0x83Ad61cdF2C61b36253e60b0bDb8bB087503d89D,0xaC00ED1ab8883C16e79546f02b6B8d4B6DefCe3E,0xF09647486298B5517F45c367744168E104973B76,0x7565AE54cF5ee97030d3425c8327D912a46bAfCe,0x7F975d08f00Df8175CF0f4433CEC5E744b9d52ed,0x716FbF49A9c6863814d256D0EbB160E13Df1410A,0xAcad64796eCbEF98E3D8E64e9AceFfa8073a62eF,0xe62B7979E181d1B7117f776d7eB5c337fa4EDb40,0x65eb77DB7Ad6C67f2F067D08f06C6Cf21d0Ac7cC,0xE4d172CC47e54cB7a41AE3b8340FA15c53726629,0x3a5B6AeD2E375A4C43Db7eD10C6256a6597e5D71,0x09C88592A27e26F8c48C5690F750438d1e3C20dC,0x531604DA653dE44076e3bf29D50E33b6a0C6BBA5,0x3BC0b3396eA51a59Bc1d5a16D5100636290Cdd09,0x6520b55613D647196DD2A6680db8b72046319EeD,0x0d848252Dfd64F8ff1e16144D1FC09f76C369C97,0xADAc3F63A892E832fADad9F42AAb4a74F3Da3695,0xB12238Cd0E02DCc5588B3C5f85F52c3974768f15,0x5901eEa176CCA9A433DAC4ccA8b83F59C6e2C76d,0x2FB7a483AFbFCc6090aD5769C8f0Fc9cDB4872a3,0xF7fc2bB352D9e095DDb93E296e6e1Cb52BCE34Fb,0x9af5d6461ADE10e3A3D3Ec26319bA59C45F760c8,0xd3C214bEE1bEF3B4C9dDFe8E1d91351070C80551,0x871B5B2ccde65D0fdAC9265270ce2B7F2460Caf4,0x59D40369b44fC62f6CfFd3b60d5707f52DFB20c8,0xe67E0062b50ea7be0B3a0aA4c5842d59e7b4eA5e,0x8dfb95f5054dd7EFfeAbB7B7C21F1aB874EF992C,0x7bBa24e3b817c4f865651b72c869f894a949B797
+Total times all Lootboxes were opened: 5626
+Total times all Lootboxes were claimed: 1281
+Lootbox: 0x83Ad61cdF2C61b36253e60b0bDb8bB087503d89D was opened 6 times and claimed 4 times
+Lootbox: 0xaC00ED1ab8883C16e79546f02b6B8d4B6DefCe3E was opened 0 times and claimed 0 times
+Lootbox: 0xF09647486298B5517F45c367744168E104973B76 was opened 1 times and claimed 0 times
+Lootbox: 0x7565AE54cF5ee97030d3425c8327D912a46bAfCe was opened 2 times and claimed 0 times
+Lootbox: 0x7F975d08f00Df8175CF0f4433CEC5E744b9d52ed was opened 212 times and claimed 46 times
+Lootbox: 0x716FbF49A9c6863814d256D0EbB160E13Df1410A was opened 155 times and claimed 35 times
+Lootbox: 0xAcad64796eCbEF98E3D8E64e9AceFfa8073a62eF was opened 73 times and claimed 19 times
+Lootbox: 0xe62B7979E181d1B7117f776d7eB5c337fa4EDb40 was opened 451 times and claimed 104 times
+Lootbox: 0x65eb77DB7Ad6C67f2F067D08f06C6Cf21d0Ac7cC was opened 652 times and claimed 146 times
+Lootbox: 0xE4d172CC47e54cB7a41AE3b8340FA15c53726629 was opened 678 times and claimed 144 times
+Lootbox: 0x3a5B6AeD2E375A4C43Db7eD10C6256a6597e5D71 was opened 797 times and claimed 182 times
+Lootbox: 0x09C88592A27e26F8c48C5690F750438d1e3C20dC was opened 801 times and claimed 180 times
+Lootbox: 0x531604DA653dE44076e3bf29D50E33b6a0C6BBA5 was opened 620 times and claimed 151 times
+Lootbox: 0x3BC0b3396eA51a59Bc1d5a16D5100636290Cdd09 was opened 742 times and claimed 178 times
+Lootbox: 0x6520b55613D647196DD2A6680db8b72046319EeD was opened 244 times and claimed 52 times
+Lootbox: 0x0d848252Dfd64F8ff1e16144D1FC09f76C369C97 was opened 66 times and claimed 14 times
+Lootbox: 0xADAc3F63A892E832fADad9F42AAb4a74F3Da3695 was opened 39 times and claimed 9 times
+Lootbox: 0xB12238Cd0E02DCc5588B3C5f85F52c3974768f15 was opened 16 times and claimed 4 times
+Lootbox: 0x5901eEa176CCA9A433DAC4ccA8b83F59C6e2C76d was opened 19 times and claimed 6 times
+Lootbox: 0x2FB7a483AFbFCc6090aD5769C8f0Fc9cDB4872a3 was opened 9 times and claimed 3 times
+Lootbox: 0xF7fc2bB352D9e095DDb93E296e6e1Cb52BCE34Fb was opened 6 times and claimed 0 times
+Lootbox: 0x9af5d6461ADE10e3A3D3Ec26319bA59C45F760c8 was opened 5 times and claimed 1 times
+Lootbox: 0xd3C214bEE1bEF3B4C9dDFe8E1d91351070C80551 was opened 13 times and claimed 2 times
+Lootbox: 0x871B5B2ccde65D0fdAC9265270ce2B7F2460Caf4 was opened 8 times and claimed 0 times
+Lootbox: 0x59D40369b44fC62f6CfFd3b60d5707f52DFB20c8 was opened 4 times and claimed 0 times
+Lootbox: 0xe67E0062b50ea7be0B3a0aA4c5842d59e7b4eA5e was opened 2 times and claimed 0 times
+Lootbox: 0x8dfb95f5054dd7EFfeAbB7B7C21F1aB874EF992C was opened 1 times and claimed 0 times
+Lootbox: 0x7bBa24e3b817c4f865651b72c869f894a949B797 was opened 4 times and claimed 1 times
+Total transactions(open/claim) on all lootboxes: 6907

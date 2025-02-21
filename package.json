@@ -1,0 +1,14 @@
+{
+  "name": "get_lb_events",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "codetit4n <lokesh@lync.world>",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "ethers": "5.7"
+  }
+}
