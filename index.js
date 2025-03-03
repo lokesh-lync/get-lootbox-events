@@ -8,14 +8,24 @@ const startBlock = 42641559;
 const endBlockOption = "latest"; // Set your desired endBlock, or use "latest"
 const batchSize = 500; // The maximum allowed block range per query
 
+const fileData = {
+  startBlock: 42641559,
+};
+
 (async () => {
   try {
+    // read data.json
+    const fs = require("fs");
+    // overrite data.json to make it empty
+    fs.writeFileSync("data.json", "");
+
     const provider = ethers.getDefaultProvider(RPC);
     const manager = new ethers.Contract(MANAGER, managerAbi, provider);
 
     let latestBlock = await provider.getBlockNumber();
     let endBlock = endBlockOption === "latest" ? latestBlock : endBlockOption;
     console.log(`Scanning blocks from ${startBlock} to ${endBlock}...`);
+    fileData.endBlock = endBlock;
 
     if (endBlock < startBlock) {
       console.error(
@@ -58,6 +68,8 @@ const batchSize = 500; // The maximum allowed block range per query
 
       currentBlock = toBlock + 1;
     }
+
+    fileData.totalLootboxes = totalLootboxCreatedEvents;
 
     let lb_to_nos_opened = {}; // lootbox to number of opens
 
@@ -109,6 +121,16 @@ const batchSize = 500; // The maximum allowed block range per query
         currentBlock = toBlock + 1;
       }
     }
+
+    fileData.totalLootboxOpens = totalLootboxOpenedEvents;
+    fileData.totalLootboxClaims = totalLootboxClaimedEvents;
+    fileData.lb_to_nos_opened = lb_to_nos_opened;
+    fileData.lb_to_nos_claimed = lb_to_nos_claimed;
+
+    // store the data in a file
+    fs.writeFileSync("data.json", JSON.stringify(fileData, null, 2));
+
+    console.log("File written successfully");
 
     console.log(
       "-------------------------------RESULTS---------------------------------------------------------",
