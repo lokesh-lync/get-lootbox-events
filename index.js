@@ -127,11 +127,6 @@ const fileData = {
     fileData.lb_to_nos_opened = lb_to_nos_opened;
     fileData.lb_to_nos_claimed = lb_to_nos_claimed;
 
-    // store the data in a file
-    fs.writeFileSync("data.json", JSON.stringify(fileData, null, 2));
-
-    console.log("File written successfully");
-
     console.log(
       "-------------------------------RESULTS---------------------------------------------------------",
     );
@@ -162,6 +157,11 @@ const fileData = {
     console.log(
       "-----------------------------------------------------------------------------------------------",
     );
+
+    // store the data in a file
+    fs.writeFileSync("data.json", JSON.stringify(fileData, null, 2));
+
+    console.log("File written successfully");
   } catch (error) {
     console.error("Error initializing:", error);
   }
