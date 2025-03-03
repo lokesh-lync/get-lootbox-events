@@ -16,8 +16,6 @@ const fileData = {
   try {
     // read data.json
     const fs = require("fs");
-    // overrite data.json to make it empty
-    fs.writeFileSync("data.json", "");
 
     const provider = ethers.getDefaultProvider(RPC);
     const manager = new ethers.Contract(MANAGER, managerAbi, provider);
